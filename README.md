@@ -1,186 +1,238 @@
-# Mitigação de Ataques por Envenenamento em Aprendizado Federado
+# 🧠 Projeto de Machine Learning - Aprendizado Supervisionado e Não Supervisionado
 
-## 🎯 Resumo do Projeto
+Este projeto implementa algoritmos de aprendizado de máquina (supervisionado e não supervisionado) utilizando os datasets **Iris** e **Penguin**. O projeto demonstra análises completas, comparações entre algoritmos e visualizações detalhadas.
 
-Este projeto de Iniciação Científica investiga **estratégias de prevenção e mitigação de ataques por envenenamento em sistemas de Aprendizado Federado**, com foco em abordagens baseadas em detecção de outliers. O estudo combina revisão integrativa da literatura com simulações experimentais para validar técnicas defensivas contra clientes maliciosos.
+## 📋 Índice
 
-## 📖 Título Completo
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Datasets Utilizados](#datasets-utilizados)
+- [Algoritmos Implementados](#algoritmos-implementados)
+- [Instalação e Configuração](#instalação-e-configuração)
+- [Como Executar](#como-executar)
+- [Descrição dos Arquivos](#descrição-dos-arquivos)
+- [Resultados e Métricas](#resultados-e-métricas)
+- [Requisitos](#requisitos)
 
-**"Mitigação de Ataques por Envenenamento em Aprendizado Federado: Avaliação de Abordagens Baseadas em Outliers"**
-
-## 🔍 Contexto e Motivação
-
-### O que é Aprendizado Federado?
-O **Aprendizado Federado (FL)** é um paradigma revolucionário de Machine Learning onde:
-- Os dados permanecem nos dispositivos locais
-- Apenas atualizações de modelo são compartilhadas
-- Preserva privacidade e atende regulamentações (LGPD, GDPR)
-
-### Por que este Projeto é Importante?
-Apesar dos benefícios de privacidade, o FL possui vulnerabilidades críticas:
-- **Ataques por envenenamento** comprometem a integridade do modelo global
-- **Clientes maliciosos** inserem dados corrompidos ou manipulam gradientes
-- **Detecção de outliers** surge como solução promissora para identificar comportamentos anômalos
-
-## 🎯 Objetivos
-
-### Objetivo Geral
-Investigar estratégias de prevenção/mitigação de ataques de envenenamento de dados e modelos em aplicações de Aprendizado Federado.
-
-### Objetivos Específicos
-1. **Analisar vulnerabilidades** do FL, com ênfase em ataques por envenenamento
-2. **Investigar métodos** de mitigação baseados em detecção de outliers
-3. **Reproduzir cenários** de ataques por meio de simulação computacional
-4. **Validar abordagens** defensivas para detecção de clientes maliciosos
-
-## 🔬 Metodologia
-
-### Abordagem Mista: Qualitativa + Quantitativa
-
-#### 1. Revisão Integrativa da Literatura
-**Baseada em Whittemore e Knafl (2005)**
-
-**Etapas:**
-- ✅ Identificação do problema de pesquisa
-- 🔄 Busca sistemática em bases científicas
-- ⏳ Avaliação e síntese crítica da literatura
-- ⏳ Análise de lacunas existentes
-- ⏳ Apresentação estruturada dos resultados
-
-#### 2. Pesquisa Experimental
-**Baseada em Runeson e Höst (2009)**
-
-**Etapas:**
-- ⏳ Design do estudo de caso
-- ⏳ Preparação para coleta de dados
-- ⏳ Execução de experimentos controlados
-- ⏳ Análise de comportamento dos modelos
-- ⏳ Elaboração de relatório detalhado
-
-## 📅 Cronograma de Execução (12 meses)
-
-### Fase 1: Revisão da Literatura (Meses 1-4)
-- **Mês 1-2**: Identificação do problema e formulação da questão
-- **Mês 2-3**: Busca sistemática em bases científicas
-- **Mês 3-4**: Triagem, avaliação e síntese crítica
-
-### Fase 2: Design Experimental (Meses 4-6)
-- **Mês 4-5**: Definição de cenários de ataque
-- **Mês 5**: Configuração do ambiente de simulação
-- **Mês 6**: Modelagem de protocolos de mitigação
-
-### Fase 3: Execução e Coleta (Meses 7-9)
-- **Mês 7**: Execução de ataques controlados
-- **Mês 8**: Aplicação de estratégias defensivas
-- **Mês 9**: Coleta de evidências quantitativas
-
-### Fase 4: Análise e Validação (Meses 10-11)
-- **Mês 10**: Análise estatística dos dados
-- **Mês 10-11**: Validação das estratégias defensivas
-- **Mês 11**: Ajustes e reexecução de cenários críticos
-
-### Fase 5: Redação e Submissão (Mês 12)
-- **Mês 12**: Escrita do artigo e relatório
-- **Mês 12**: Revisão e preparação para submissão
-
-## 🛡️ Estratégias de Defesa Investigadas
-
-### Detecção de Outliers
-- **Premissa**: Clientes maliciosos geram atualizações com comportamento estatístico discrepante
-- **Abordagem**: Identificar gradientes/pesos que se comportam como outliers estatísticos
-- **Benefício**: Detecção proativa de agentes maliciosos
-
-### Agregação Robusta
-- **Objetivo**: Desenvolver modelos globais menos sensíveis a outliers
-- **Métodos**: Algoritmos de agregação teoricamente resistentes a ataques
-- **Validação**: Testes comparativos de eficácia
-
-## 🎯 Resultados Esperados
-
-### Contribuições Científicas
-1. **Mapeamento** de vulnerabilidades em FL
-2. **Avaliação** de técnicas de mitigação existentes
-3. **Validação experimental** de estratégias defensivas
-4. **Identificação** de limitações e oportunidades
-
-### Impacto Prático
-- **Fortalecimento** da cibersegurança em aplicações FL
-- **Garantia** de aplicabilidade em cenários sensíveis
-- **Conformidade** com regulamentações de privacidade
-- **Robustez** contra ameaças emergentes
-
-## 🏗️ Estrutura do Projeto
+## 🗂️ Estrutura do Projeto
 
 ```
 doc/
-├── documentação-do-projeto/
-│   ├── projeto.txt                    # Documento principal
-│   ├── cronograma.md                  # Cronograma detalhado
-│   └── desafios/
-│       └── iris-penguin-datasets/     # Estudos preliminares
 ├── code/
-│   ├── federated-learning/            # Implementações FL
-│   ├── attack-simulation/             # Simulação de ataques
-│   └── defense-strategies/            # Estratégias defensivas
-└── results/
-    ├── literature-review/             # Resultados da revisão
-    ├── experimental-data/             # Dados experimentais
-    └── analysis/                      # Análises estatísticas
+│   ├── data/
+│   │   ├── datasets-install.py          # Script para instalação de datasets
+│   │   └── verificar-caminho.py         # Utilitário para verificação de caminhos
+│   ├── iris-dataset/
+│   │   ├── aprendizado-supervisionado.py      # ML Supervisionado - Iris
+│   │   ├── aprendizado-nao-supervisionado.py  # ML Não Supervisionado - Iris
+│   │   └── iris.csv                           # Dataset Iris (gerado automaticamente)
+│   └── penguin-dataset/
+│       ├── aprendizado-supervisionado.py      # ML Supervisionado - Penguin
+│       ├── aprendizado-nao-supervisionado.py  # ML Não Supervisionado - Penguin
+│       └── penguins.csv                       # Dataset Penguin (gerado automaticamente)
+└── documentação-do-projeto/
+    ├── Projeto.md
+    ├── aprendizado-supervisionado/
+    ├── aprendizado-não-supervisionado/
+    ├── avaliações-de-modelos/
+    └── desafios/
 ```
 
-## 📚 Base Teórica Principal
+## 📊 Datasets Utilizados
 
-### Trabalhos Fundamentais
-- **Li et al. (2021)**: Survey sobre sistemas FL
-- **Zhang et al. (2022)**: Ameaças de segurança e privacidade
-- **Bhagoji et al. (2019)**: Análise adversarial do FL
-- **Blanchard et al. (2017)**: Gradiente descendente tolerante a Bizantinos
+### 1. Iris Dataset
+- **Descrição**: Conjunto clássico de dados de flores Iris
+- **Features**: 4 características (comprimento e largura de sépala e pétala)
+- **Classes**: 3 espécies (Setosa, Versicolor, Virginica)
+- **Amostras**: 150 observações
 
-### Regulamentações
-- **LGPD** (Lei Geral de Proteção de Dados)
-- **GDPR** (General Data Protection Regulation)
+### 2. Penguin Dataset
+- **Descrição**: Dados de pinguins Palmer
+- **Features**: Características físicas e localização
+- **Classes**: 3 espécies (Adelie, Chinstrap, Gentoo)
+- **Amostras**: ~344 observações
 
-## 🔧 Ferramentas e Tecnologias
+## 🤖 Algoritmos Implementados
 
-### Simulação e Experimentação
-- **Python** para implementação
-- **PyTorch/TensorFlow** para modelos FL
-- **Scikit-learn** para detecção de outliers
-- **Matplotlib/Seaborn** para visualização
+### Aprendizado Supervisionado
+- **Decision Tree** (Árvore de Decisão)
+- **Random Forest** (Floresta Aleatória)
+- **SVM** (Support Vector Machine)
+- **Naive Bayes**
+- **K-Nearest Neighbors (KNN)**
+- **Logistic Regression** (Regressão Logística)
 
-### Análise Estatística
-- **Pandas/NumPy** para manipulação de dados
-- **SciPy** para testes estatísticos
-- **Jupyter Notebooks** para documentação
+### Aprendizado Não Supervisionado
+- **K-Means Clustering**
+- **Hierarchical Clustering** (Agglomerative)
+- **DBSCAN** (Density-Based Clustering)
+- **PCA** (Principal Component Analysis)
 
-## 🎯 Meta de Publicação
+## 🛠️ Instalação e Configuração
 
-### Objetivos de Disseminação
-- **Artigo científico** em conferência/periódico
-- **Relatório técnico** detalhado
-- **Apresentação** em eventos acadêmicos
-- **Código open-source** para reprodutibilidade
+### 1. Requisitos do Sistema
+- Python 3.7 ou superior
+- pip (gerenciador de pacotes)
 
-## 👨‍💻 Pesquisador
+### 2. Instalar Dependências
 
-**Ryanditko** - Estudante de Iniciação Científica  
-Área: Machine Learning e Cibersegurança  
-Foco: Aprendizado Federado e Detecção de Outliers
+Execute o comando no terminal:
 
-## 🤝 Orientação Acadêmica
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn scipy
+```
 
-Projeto desenvolvido sob orientação acadêmica especializada em:
-- Aprendizado de Máquina Distribuído
-- Cibersegurança em Sistemas Inteligentes
-- Detecção de Anomalias e Outliers
+### 3. Estrutura de Pastas
+O projeto já possui a estrutura correta. Certifique-se de que você está na pasta raiz do projeto.
 
-## 📈 Status Atual
+## ▶️ Como Executar
 
-- ✅ **Fase 1**: Revisão da Literatura (Em andamento)
-- 🔄 **Preparação**: Estudos preliminares com datasets Iris/Penguin
-- ⏳ **Próximo**: Design experimental para simulação FL
-- ⏳ **Futuro**: Implementação de ataques e defesas
+### Opção 1: Execução Individual
+
+#### Aprendizado Supervisionado - Iris
+```bash
+cd "doc/code/iris-dataset"
+python aprendizado-supervisionado.py
+```
+
+#### Aprendizado Não Supervisionado - Iris
+```bash
+cd "doc/code/iris-dataset"
+python aprendizado-nao-supervisionado.py
+```
+
+#### Aprendizado Supervisionado - Penguin
+```bash
+cd "doc/code/penguin-dataset"
+python aprendizado-supervisionado.py
+```
+
+#### Aprendizado Não Supervisionado - Penguin
+```bash
+cd "doc/code/penguin-dataset"
+python aprendizado-nao-supervisionado.py
+```
+
+### Opção 2: Executar Tudo
+Você pode executar todos os scripts em sequência visitando cada pasta e executando os arquivos.
+
+## 📁 Descrição dos Arquivos
+
+### Aprendizado Supervisionado
+- **Carregamento automático de datasets** (local, seaborn, sklearn, URL)
+- **Análise exploratória completa** (estatísticas, visualizações)
+- **Pré-processamento** (limpeza, codificação, normalização)
+- **Treinamento de 6 algoritmos diferentes**
+- **Avaliação com múltiplas métricas** (accuracy, precision, recall, F1-score)
+- **Visualizações comparativas** (confusion matrix, ROC curves, etc.)
+- **Validação cruzada**
+- **Hyperparameter tuning**
+
+### Aprendizado Não Supervisionado
+- **Análise de Componentes Principais (PCA)**
+- **Clustering com K-Means** (método do cotovelo, silhouette analysis)
+- **Clustering Hierárquico** (dendrograma, diferentes linkages)
+- **DBSCAN** (detecção de outliers, otimização de parâmetros)
+- **Comparação de algoritmos** (métricas de qualidade)
+- **Visualizações 2D e 3D**
+- **Análise de características dos clusters**
+
+### Utilitários
+- **datasets-install.py**: Script para instalação e verificação de datasets
+- **verificar-caminho.py**: Template para configuração de caminhos
+
+## 📈 Resultados e Métricas
+
+### Métricas de Aprendizado Supervisionado
+- **Accuracy**: Proporção de predições corretas
+- **Precision**: Proporção de verdadeiros positivos
+- **Recall**: Capacidade de encontrar todos os positivos
+- **F1-Score**: Média harmônica entre precision e recall
+- **ROC-AUC**: Área sob a curva ROC
+
+### Métricas de Aprendizado Não Supervisionado
+- **Silhouette Score**: Qualidade dos clusters (-1 a 1)
+- **Adjusted Rand Index (ARI)**: Similaridade com classes verdadeiras
+- **Normalized Mutual Information (NMI)**: Informação mútua normalizada
+- **Inértia**: Soma das distâncias quadráticas aos centroides
+
+## 📦 Requisitos
+
+### Bibliotecas Python
+```
+pandas>=1.3.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+scipy>=1.7.0
+```
+
+### Instalação Automática
+Execute em qualquer terminal:
+```bash
+pip install -r requirements.txt
+```
+
+## 🚀 Funcionalidades Especiais
+
+### 1. Carregamento Inteligente de Datasets
+- Busca local primeiro
+- Fallback para seaborn/sklearn
+- Download automático via URL
+- Salvamento local para reutilização
+
+### 2. Caminhos Relativos Inteligentes
+- Uso de `os.path.join()` para compatibilidade
+- Caminhos baseados na localização do arquivo
+- Funcionamento em qualquer sistema operacional
+
+### 3. Análises Robustas
+- Tratamento de valores faltantes
+- Codificação automática de variáveis categóricas
+- Normalização/padronização automática
+- Validação cruzada
+
+### 4. Visualizações Profissionais
+- Gráficos de alta qualidade
+- Comparações lado a lado
+- Métricas em tabelas formatadas
+- Cores e estilos consistentes
+
+## 🛡️ Tratamento de Erros
+
+- **Datasets não encontrados**: Download automático
+- **Bibliotecas faltantes**: Mensagens de erro claras
+- **Dados corrompidos**: Validação e limpeza automática
+- **Problemas de caminho**: Resolução automática
+
+## 💡 Dicas de Uso
+
+1. **Primeira execução**: Pode demorar mais devido ao download dos datasets
+2. **Execuções subsequentes**: Serão mais rápidas usando dados locais
+3. **Personalização**: Modifique os parâmetros nos scripts para experimentar
+4. **Visualizações**: Use `plt.show()` em ambientes que suportam
+5. **Reprodutibilidade**: Seeds fixos garantem resultados consistentes
+
+## 📚 Documentação Adicional
+
+Consulte a pasta `documentação-do-projeto/` para:
+- Explicações teóricas detalhadas
+- Exemplos de uso avançado
+- Desafios propostos
+- Métricas de avaliação
+
+## 🎯 Próximos Passos
+
+1. Execute os scripts na ordem sugerida
+2. Analise os resultados e gráficos gerados
+3. Compare o desempenho entre algoritmos
+4. Experimente com diferentes parâmetros
+5. Consulte a documentação para aprofundamento teórico
 
 ---
 
-**Este projeto contribui para o avanço da segurança em sistemas de Aprendizado Federado, garantindo aplicabilidade em cenários críticos de privacidade e conformidade regulatória.**
+**Autor**: Projeto de Iniciação Científica
+**Data**: 2025
+**Versão**: 1.0
+
+Para dúvidas ou problemas, consulte a documentação ou verifique se todas as dependências estão instaladas corretamente.

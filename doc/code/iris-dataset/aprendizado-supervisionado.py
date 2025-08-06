@@ -20,14 +20,21 @@ from sklearn.datasets import load_iris
 # Suprimir warnings desnecessários
 warnings.filterwarnings('ignore')
 
+def get_iris_path():
+    """Retorna o caminho completo para o arquivo iris.csv"""
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_dir, "iris.csv")
+
 def load_iris_dataset():
     """Carrega o dataset iris de diferentes fontes"""
     print("🔍 Procurando dataset iris...")
     
+    iris_path = get_iris_path()
+    
     # Tentar carregar de arquivo local primeiro
-    if os.path.exists('iris.csv'):
+    if os.path.exists(iris_path):
         print("✅ Arquivo local encontrado!")
-        return pd.read_csv('iris.csv')
+        return pd.read_csv(iris_path)
     
     # Tentar via sklearn (método mais confiável)
     try:
@@ -36,7 +43,7 @@ def load_iris_dataset():
         iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
         iris_df['species'] = iris.target_names[iris.target]
         # Salvar para uso futuro
-        iris_df.to_csv('iris.csv', index=False)
+        iris_df.to_csv(iris_path, index=False)
         print("✅ Dataset carregado via sklearn e salvo localmente!")
         return iris_df
     except Exception as e:
@@ -48,7 +55,7 @@ def load_iris_dataset():
         iris_df = sns.load_dataset("iris")
         if iris_df is not None and not iris_df.empty:
             # Salvar para uso futuro
-            iris_df.to_csv('iris.csv', index=False)
+            iris_df.to_csv(iris_path, index=False)
             print("✅ Dataset baixado via seaborn e salvo localmente!")
             return iris_df
     except Exception as e:

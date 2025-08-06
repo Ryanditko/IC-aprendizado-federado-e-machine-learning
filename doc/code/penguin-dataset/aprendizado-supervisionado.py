@@ -19,14 +19,21 @@ import os
 # Suprimir warnings desnecessários
 warnings.filterwarnings('ignore')
 
+def get_penguin_path():
+    """Retorna o caminho completo para o arquivo penguins.csv"""
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_dir, "penguins.csv")
+
 def load_penguin_dataset():
     """Carrega o dataset penguin de diferentes fontes"""
     print("🔍 Procurando dataset penguin...")
     
+    penguin_path = get_penguin_path()
+    
     # Tentar carregar de arquivo local primeiro
-    if os.path.exists('penguins.csv'):
+    if os.path.exists(penguin_path):
         print("✅ Arquivo local encontrado!")
-        return pd.read_csv('penguins.csv')
+        return pd.read_csv(penguin_path)
     
     # Tentar via seaborn
     try:
@@ -34,7 +41,7 @@ def load_penguin_dataset():
         penguin = sns.load_dataset("penguins")
         if penguin is not None and not penguin.empty:
             # Salvar para uso futuro
-            penguin.to_csv('penguins.csv', index=False)
+            penguin.to_csv(penguin_path, index=False)
             print("✅ Dataset baixado via seaborn e salvo localmente!")
             return penguin
     except Exception as e:
@@ -46,7 +53,7 @@ def load_penguin_dataset():
         url = "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv"
         penguin = pd.read_csv(url)
         # Salvar para uso futuro
-        penguin.to_csv('penguins.csv', index=False)
+        penguin.to_csv(penguin_path, index=False)
         print("✅ Dataset baixado via URL e salvo localmente!")
         return penguin
     except Exception as e:
