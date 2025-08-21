@@ -1,8 +1,0 @@
-Método,N° Outliers,Porcentagem,Parâmetros
-Z-Score,50,4.76%,{'threshold': 3}
-IQR,58,5.52%,{'multiplier': 1.5}
-Isolation Forest,105,10.00%,{'contamination': 0.1}
-Local Outlier Factor,105,10.00%,"{'n_neighbors': 20, 'contamination': 0.1}"
-DBSCAN,1,0.10%,"{'eps': 0.5, 'min_samples': 5}"
-One-Class SVM,105,10.00%,"{'nu': 0.1, 'gamma': 'scale'}"
-Elliptic Envelope,105,10.00%,{'contamination': 0.1}
