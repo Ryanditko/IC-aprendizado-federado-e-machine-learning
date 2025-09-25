@@ -48,38 +48,8 @@ Referências:
 [4] ZHANG, J. et al. (2022) - Ameaças à segurança e privacidade em FL
 [5] YAZDINEJAD, A et al. (2024) - Modelo robusto contra envenenamento
 
-5. Implementação Prática
-5.1 Projeto de Detecção de Outliers:
-Como parte prática da pesquisa, foi desenvolvido um sistema completo de detecção de outliers para avaliar diferentes técnicas de identificação de anomalias. Este projeto serve como base experimental para as estratégias de defesa em aprendizado federado.
-
-📁 Localização: `/outlier-detection/`
-
-📊 Técnicas Implementadas:
-- Z-Score: Detecção baseada em desvios padrão
-- IQR: Método dos quartis interquartis  
-- Isolation Forest: Isolamento de anomalias
-- Local Outlier Factor (LOF): Densidade local
-- DBSCAN: Clustering baseado em densidade
-- One-Class SVM: Máquina de vetor de suporte
-- Elliptic Envelope: Envoltória elíptica
-
-🎯 Resultados Principais:
-- Z-Score: 99,8% de acurácia, 98% de precisão e recall
-- IQR: 99,2% de acurácia, 100% de recall
-- Ensemble: Combinou múltiplos métodos com F1-score de 81%
-
-📖 Documentação Completa:
-- `/doc/documentação-do-projeto/detecção-de-outliers/README.md`
-- `/doc/documentação-do-projeto/detecção-de-outliers/técnicas-detalhadas.md`
-- `/doc/documentação-do-projeto/detecção-de-outliers/metodologia-avaliação.md`
-- `/doc/documentação-do-projeto/detecção-de-outliers/aplicação-aprendizado-federado.md`
-
-🔗 Aplicação em FL:
-Os resultados indicam que Z-Score e IQR são os métodos mais adequados para detecção de atualizações maliciosas em ambientes de aprendizado federado, oferecendo alta precisão com baixo overhead computacional.
-
 Contribuições Esperadas:
 - Mapeamento de técnicas de mitigação
-- Avaliação comparativa de abordagens baseadas em outliers ✅
+- Avaliação comparativa de abordagens
 - Diretrizes para implementação segura
 - Fortalecimento da cibersegurança em FL
-- Sistema prático de detecção de anomalias ✅

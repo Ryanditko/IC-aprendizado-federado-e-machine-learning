@@ -1,0 +1,3 @@
+Dataset,N_Amostras,N_Features,KMeans_Melhor_K,KMeans_Silhueta,KMeans_Davies_Bouldin,Hierarquico_Melhor_Metodo,Hierarquico_Coef_Cofenetico,PCA_Componentes_80pct,PCA_Componentes_90pct,PCA_Componentes_95pct,PCA_Variancia_PC1,PCA_Variancia_PC2
+Iris,150,4,2,0.582,0.593,average,0.854,2,2,2,0.73,0.229
+Penguins,342,4,2,0.532,0.714,average,0.845,2,3,3,0.688,0.193

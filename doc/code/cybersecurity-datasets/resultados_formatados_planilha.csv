@@ -1,0 +1,8 @@
+Técnica,Acurácia,Precisão,Recall,F1-score,Observações
+K-means,0.582,,,,Coeficiente de Silhueta - Dataset Iris
+Isolation forest,,,,,Detecta anomalias por isolamento
+Dbscan,,,,,Clustering baseado em densidade
+,,,,,
+Baseline,,,,,
+Z-score,,,,,Normalização por desvio padrão
+Quantis,,,,,Normalização por percentis

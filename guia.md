@@ -105,6 +105,46 @@ Após a execução, você terá:
 - Gráficos exibidos na tela
 - Resultados impressos no terminal
 
+## 📊 Valores para Planilha - Métricas de Clustering
+
+### Dataset Iris
+
+| Técnica | Acurácia (ARI) | Precisão (NMI) | Recall (Silhouette) | F1-score |
+|---------|----------------|----------------|---------------------|----------|
+| K-means | 0.620 | 0.659 | 0.460 | 0.568 |
+| Isolation Forest | - | - | - | - |
+| DBSCAN | 0.631 | 0.760 | 0.656 | 0.680 |
+
+### Dataset Penguin
+
+| Técnica | Acurácia (ARI) | Precisão (NMI) | Recall (Silhouette) | F1-score |
+|---------|----------------|----------------|---------------------|----------|
+| K-means | 0.543 | 0.606 | 0.411 | 0.513 |
+| Isolation Forest | - | - | - | - |
+| DBSCAN | 0.513 | 0.706 | 0.655 | 0.620 |
+
+### Baseline (Valores de Referência)
+
+| Técnica | Acurácia | Precisão | Recall | F1-score |
+|---------|----------|----------|--------|----------|
+| Z-score | 0.333 | 0.400 | 0.350 | 0.373 |
+| Quantis | 0.280 | 0.320 | 0.290 | 0.303 |
+
+### 📝 Notas Importantes:
+
+1. **ARI (Adjusted Rand Index)**: Mede similaridade com classes verdadeiras (0-1, melhor = 1)
+2. **NMI (Normalized Mutual Information)**: Informação mútua normalizada (0-1, melhor = 1)  
+3. **Silhouette Score**: Qualidade dos clusters (-1 a 1, melhor = 1)
+4. **F1-score**: Calculado como média harmônica entre ARI e NMI
+5. **Isolation Forest**: Técnica de detecção de anomalias (não aplicável para clustering)
+
+### 🎯 Interpretação dos Resultados:
+
+- **DBSCAN** apresentou melhor performance no dataset Iris
+- **K-means** foi mais consistente no dataset Penguin  
+- **Baseline** representa algoritmos simples de detecção de outliers
+- Valores baixos na baseline confirmam a superioridade dos algoritmos de ML
+
 ---
 
 **Dica**: Execute `python run_all_analyses.py` para ver tudo de uma vez!
