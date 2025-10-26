@@ -1,0 +1,106 @@
+# .gitignore para c:\Users\Administrador
+# Este arquivo impede que o Git monitore arquivos desnecessários do sistema
+
+# Ignorar todas as pastas do Windows exceto o projeto
+AppData/
+Application Data/
+Contacts/
+Cookies/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+Links/
+Local Settings/
+Music/
+My Documents/
+NetHood/
+OneDrive/
+Pictures/
+PrintHood/
+Recent/
+Saved Games/
+Searches/
+SendTo/
+Start Menu/
+Templates/
+Videos/
+3D Objects/
+Ansel/
+IntelGraphicsProfiles/
+
+# Arquivos do sistema Windows
+NTUSER.DAT*
+ntuser.dat*
+ntuser.ini
+*.lnk
+
+# Configurações de aplicativos
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pastas de configuração de desenvolvimento
+.android/
+.cache/
+.codegpt/
+.cursor/
+.docker/
+.eclipse/
+.gnupg/
+.matplotlib/
+.streamlit/
+.wakatime/
+
+# Arquivos de configuração
+.bash_history
+.gitconfig
+.lesshst
+.node_repl_history
+.wakatime.cfg
+
+# Executáveis PostgreSQL
+*.exe
+
+# Outras pastas de projetos (descomente se não quiser rastrear)
+# Kernal/
+# LIA/
+# Leetcode/
+# Leroy-Merlin/
+# Merlin/
+# Projetos/
+# bussines-links/
+# data/
+# ditko.ai/
+# ditko.co/
+# go/
+# port-teste/
+# rpa-pulso/
+
+# Arquivos executáveis com timestamp
+*.exe-*
