@@ -8,3 +8,8 @@ kaggle>=1.5.0
 kagglehub>=0.2.0
 plotly>=5.0.0
 dash>=2.0.0
+
+# NSL-KDD Dataset dependencies
+jupyter>=1.0.0
+notebook>=6.4.0
+ipywidgets>=7.6.0

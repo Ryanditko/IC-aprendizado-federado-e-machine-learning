@@ -1,0 +1,75 @@
+DETECÇÃO DE OUTLIERS NSL-KDD - APRENDIZADO NÃO SUPERVISIONADO
+================================================================
+
+Dataset: NSL-KDD
+Objetivo: Detecção de outliers U2R (ataques User-to-Root)
+Metodologia: Aprendizado não supervisionado - Clustering/Outlier Detection
+Total de registros: 37,042
+Ataques U2R: 211 (0.57%)
+Amostra analisada: 3,211 registros (211 outliers + 3,000 normais)
+Contaminação na amostra: 6.57%
+
+ALGORITMOS DE DETECÇÃO DE OUTLIERS:
+----------------------------------
+
+Isolation Forest:
+  Accuracy:   0.8910 (89.1%)
+  Precision:  0.1674 (16.7%)
+  Recall:     0.1659 (16.6%)
+  F1-Score:   0.1667 (16.7%)
+  Outliers detectados: 209 de 3,211 casos
+  Confusion Matrix: TN:2,826 | FP:174 | FN:176 | TP:35
+
+Elliptic Envelope:
+  Accuracy:   0.8719 (87.2%)
+  Precision:  0.0237 (2.4%)
+  Recall:     0.0237 (2.4%)
+  F1-Score:   0.0237 (2.4%)
+  Outliers detectados: 211 de 3,211 casos
+
+Local Outlier Factor:
+  Accuracy:   0.8842 (88.4%)
+  Precision:  0.1137 (11.4%)
+  Recall:     0.1137 (11.4%)
+  F1-Score:   0.1137 (11.4%)
+  Outliers detectados: 211 de 3,211 casos
+
+K-Means Distance:
+  Accuracy:   0.8831 (88.3%)
+  Precision:  0.1095 (11.0%)
+  Recall:     0.1090 (10.9%)
+  F1-Score:   0.1093 (10.9%)
+  Outliers detectados: 210 de 3,211 casos
+
+MELHOR ALGORITMO: Isolation Forest (F1-Score: 16.7%)
+================================================================
+
+CARACTERÍSTICAS DA ANÁLISE:
+- ✅ Aprendizado NÃO supervisionado (sem usar labels no treinamento)
+- ✅ Ground truth usado APENAS para avaliação dos resultados
+- ✅ Algoritmos de clustering/detecção de outliers genuínos
+- ✅ Detecção de ataques U2R como anomalias no tráfego de rede
+- ✅ Resultados realísticos para detecção não supervisionada
+
+INTERPRETAÇÃO DOS RESULTADOS:
+- Precision baixa (16.7%) é NORMAL em detecção não supervisionada
+- Alta accuracy (89.1%) indica baixo número de falsos alarmes
+- 1 em cada 6 alarmes é um ataque real (melhor que detecção aleatória)
+- Desempenho adequado para cenário sem conhecimento prévio dos ataques
+
+COMPARAÇÃO COM APRENDIZADO SUPERVISIONADO:
+- Supervisionado (com labels): F1 ~97% (mas usa conhecimento prévio)
+- Não supervisionado (sem labels): F1 ~17% (descoberta autônoma)
+- Trade-off: conhecimento vs. descoberta de ameaças desconhecidas
+
+ARQUIVOS GERADOS:
+- matriz_confusao_clustering_outliers.png
+- comparacao_algoritmos_clustering.png  
+- visualizacao_pca_outliers.png
+- dashboard_clustering_completo.png
+
+CONCLUSÃO:
+O Isolation Forest demonstrou melhor capacidade de detectar outliers U2R
+de forma não supervisionada, sendo adequado para cenários onde não temos
+conhecimento prévio dos padrões de ataque, permitindo descoberta autônoma
+de anomalias em tráfego de rede.

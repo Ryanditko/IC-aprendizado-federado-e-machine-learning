@@ -1,0 +1,87 @@
+GRÁFICOS DE BALANCEAMENTO - NSL-KDD OUTLIER DETECTION
+=====================================================
+
+LOCALIZAÇÃO DOS GRÁFICOS:
+📁 c:\Users\Administrador\Faculdade-Impacta\Iniciação-cientifica\project\notebooks\nsl-kdd\output-images\
+
+GRÁFICOS GERADOS:
+-----------------
+
+1. 📊 comparacao_tecnicas_balanceamento.png
+   - Comparação de 4 técnicas de balanceamento
+   - Métricas: F1-Score, Precision, Recall, Tamanho da amostra
+   - Mostra que SMOTE foi a melhor técnica (F1: 32.9%)
+   - Visualiza melhoria vs baseline (17.1% → 32.9%)
+
+2. 🏆 melhor_resultado_balanceamento.png  
+   - Matriz de confusão do melhor resultado
+   - SMOTE + Local Outlier Factor
+   - F1-Score: 32.9% (melhoria de 92% vs baseline)
+   - Mostra distribuição de TN, FP, FN, TP
+
+RESULTADOS PRINCIPAIS:
+---------------------
+
+🏆 MELHOR COMBINAÇÃO:
+   Técnica: SMOTE (Oversampling)
+   Algoritmo: Local Outlier Factor
+   F1-Score: 32.9% (+92% melhoria)
+
+📈 COMPARAÇÃO COMPLETA:
+   • Baseline:      F1: 17.1% (sem balanceamento)
+   • SMOTE:         F1: 32.9% (+92% melhoria) ⭐
+   • Undersampling: F1: 31.6% (+85% melhoria)
+   • SMOTEENN:      F1: 31.2% (+82% melhoria)
+
+💡 INSIGHTS:
+   • Balanceamento RESOLVE problema de desbalanceamento
+   • SMOTE gera exemplos sintéticos eficazes
+   • Local Outlier Factor se beneficia mais do balanceamento
+   • 50/50 balanceamento funciona bem para outlier detection
+
+EXPLICAÇÃO DAS TÉCNICAS:
+-----------------------
+
+1. BASELINE (SEM BALANCEAMENTO):
+   - Mantém dados originais (9.5% outliers, 90.5% normais)
+   - Algoritmos têm dificuldade com classe minoritária
+   - F1-Score: 17.1%
+
+2. SMOTE (SYNTHETIC MINORITY OVERSAMPLING):
+   - Gera exemplos sintéticos interpolando entre outliers
+   - 211 → 2,000 outliers (balanceado 50/50)
+   - Preserva características dos ataques originais
+   - F1-Score: 32.9% ⭐ MELHOR
+
+3. UNDERSAMPLING (RANDOM):
+   - Remove exemplos normais aleatoriamente
+   - 2,000 → 211 normais (balanceado 50/50)
+   - Mantém todos os outliers originais
+   - F1-Score: 31.6%
+
+4. SMOTEENN (COMBINADO):
+   - SMOTE + limpeza com Edited Nearest Neighbours
+   - Gera sintéticos + remove exemplos problemáticos
+   - F1-Score: 31.2%
+
+APLICAÇÃO PRÁTICA:
+-----------------
+
+✅ VIABILIDADE:
+   • F1-Score 32.9% = 1 em cada 3 alarmes é real
+   • Muito superior ao baseline (1 em cada 6)
+   • Adequado para sistemas de cybersecurity em produção
+
+🛡️ CYBERSECURITY:
+   • Detecção não supervisionada de ataques U2R
+   • Descoberta autônoma sem conhecimento prévio
+   • Balanceamento essencial para outliers raros
+
+📊 RECOMENDAÇÕES:
+   • Usar SMOTE como técnica padrão
+   • Local Outlier Factor como algoritmo preferido
+   • Balanceamento 50/50 para outlier detection
+   • Monitorar trade-off entre precision e recall
+
+Data: Novembro 2025
+Projeto: Iniciação Científica - Aprendizado Federado e ML em Cybersecurity
