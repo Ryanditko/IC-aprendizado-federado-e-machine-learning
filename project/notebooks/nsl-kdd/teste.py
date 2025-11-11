@@ -206,7 +206,7 @@ if len(cat_cols) > 0:
     plt.show()
 # %%
 # detecção de outliers
-X = df_filtered[["count", "service"]].dropna()
+X = df_filtered[["count", "serror_rate"]].dropna()
 iso = IsolationForest(contamination=0.05, random_state=42)
 outlier_pred = iso.fit_predict(X)
 X_clustered = X.copy()
@@ -219,7 +219,7 @@ plt.figure(figsize=(8, 6))
 sns.scatterplot(
     data=df_filtered,
     x="count",
-    y="service",
+    y="serror_rate",
     hue="outlier",
     palette={0: "blue", 1: "red"},
     s=50,
@@ -232,13 +232,13 @@ plt.figure(figsize=(8, 6))
 sns.scatterplot(
     data=df_filtered,
     x="count",
-    y="service",
+    y="serror_rate",
     hue="attack_type",
     palette="tab10",
     s=50,
 )
 
-plt.title("Distribuição de attack_type (count vs service)")
+plt.title("Distribuição de attack_type (count vs serror_rate)")
 plt.tight_layout()
 plt.show()
 # %%
